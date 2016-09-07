@@ -13,7 +13,7 @@ Eventually, the following images will be provided, alongside the base container:
  - `technicallyspeaking/dev-env-haskell`: Environment for Haskell applications
  - `technicallyspeaking/dev-env-elixir`: Environment for Elixir applications
 
-**Note**: I like to stay current, so I'm going to be rolling language versions for these images.
+**Note**: I like to stay current, so I'm going to be rolling language versions for these images
 forward as frequently as I can. I have not decided whether or not it makes sense for me to try to
 maintain current stable images spanning multiple versions of language releases. I'm only one person
 and don't have infinite time for such things. If you're interested in this, however, please contact me
