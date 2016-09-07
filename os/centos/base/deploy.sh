@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t technicallyspeaking:dev-env-base .
+docker build -t technicallyspeaking:latest --label="centos-base" --quiet .
 
