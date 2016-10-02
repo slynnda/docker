@@ -1,3 +1,5 @@
 DOCKER_REPOSITORY=technicallyspeaking/dev-envs
 DOCKER_IMAGE_TAG=base-centos-latest
 DOCKER_CONTAINER_NAME=dev-base-centos
+GCLOUD_HOSTING_DOMAIN=us.gcr.io
+GCLOUD_PROJECT_NAME=technicallyspeaking-io
