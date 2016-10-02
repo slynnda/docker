@@ -1,0 +1,5 @@
+DOCKER_REPOSITORY=technicallyspeaking/dev-envs
+DOCKER_IMAGE_TAG=go-centos-latest
+DOCKER_CONTAINER_NAME=dev-go-centos
+GCLOUD_HOSTING_DOMAIN=us.gcr.io
+GCLOUD_PROJECT_NAME=technicallyspeaking-io
