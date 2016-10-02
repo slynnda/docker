@@ -11,20 +11,30 @@ RUN yum -y update && \
                    wget \
                    telnet \
                    dig \
-                   p7zip
+                   p7zip \
+		   git
 
-# Make a main directory for the user:
-RUN mkdir /home/main
+# Create base directories for environment files:
+RUN mkdir -p /usr/etc/technicallyspeaking/ && \
+    mkdir -p /usr/lib/technicallyspeaking/
+
+# Add customized bashrc and bashprofile:
+RUN mkdir -p /usr/etc/technicallyspeaking/bash
+COPY src/bash/.bashrc /usr/etc/technicallyspeaking/bash
+COPY src/bash/.bash_profile /usr/etc/technicallyspeaking/bash
+RUN cp -r /usr/etc/technicallyspeaking/bash/.bash_profile ~/.bash_profile && \
+    cp -r /usr/etc/technicallyspeaking/bash/.bashrc ~/.bashrc
 
 # Customize vim experience:
-RUN mkdir -p /home/main/.vim/autoload /home/main/.vim/bundle && \
-    curl -LSso /home/main/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-    touch ~/.vimrc
-COPY src/vim/.vimrc /home/main/
-                   
-# Create base directories for environment files:
-RUN mkdir -p /usr/etc/technicallyspeaking/build && \
-    mkdir -p /usr/lib/technicallyspeaking/build
+RUN mkdir -p /usr/lib/technicallyspeaking/vim/vundle && \
+    mkdir -p ~/.vim/bundle && \
+    git clone https://github.com/VundleVim/Vundle.vim.git /usr/lib/technicallyspeaking/vim/vundle/Vundle.vim && \
+    cp -r /usr/lib/technicallyspeaking/vim/vundle/Vundle.vim ~/.vim/bundle/Vundle.vim
+COPY src/vim/.vimrc /usr/lib/technicallyspeaking/vim/.vimrc
+RUN cp -r /usr/lib/technicallyspeaking/vim/.vimrc ~/.vimrc
+
+# Move 
+WORKDIR root
 
 # Expose port for ssh connections:
 EXPOSE 22
