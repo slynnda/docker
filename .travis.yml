@@ -1,10 +1,10 @@
 sudo: required
-language: python
+language: c
 services:
   - docker
 env:
   - BASE_IMAGE_TAG=$DOCKER_HUB_REPO:base-centos-latest
-before_install:
+script:
   - docker build -t $BASE_IMAGE_TAG os/centos/base
   - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
   - docker push $BASE_IMAGE_TAG
