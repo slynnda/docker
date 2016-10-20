@@ -16,6 +16,7 @@ Plugin 'vim-json'
 Plugin 'vim-scala'
 Plugin 'vim-ansible-yaml'
 Plugin 'vim-markdown'
+Plugin 'dockerfile'
 
 filetype plugin indent on
 
