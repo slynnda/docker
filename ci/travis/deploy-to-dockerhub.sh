@@ -1,2 +1,0 @@
-docker push $BASE_IMAGE_TAG-$TRAVIS_BRANCH && \
-docker push $GO_IMAGE_TAG-$TRAVIS_BRANCH

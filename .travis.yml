@@ -3,12 +3,14 @@ language: c
 services:
   - docker
 env:
-  - BASE_IMAGE_TAG=$DOCKER_HUB_REPO:base-centos
-  - GO_IMAGE_TAG=$DOCKER_HUB_REPO:go-centos
+  - BASE_IMAGE_ID=$DOCKER_HUB_REPO:base-centos-$TRAVIS_BRANCH
+  - GO_IMAGE_ID=$DOCKER_HUB_REPO:go-centos-$TRAVIS_BRANCH
 script:
-  - ci/travis/build-docker-images.sh
-  - ci/travis/login-to-dockerhub.sh
-  - ci/travis/deploy-to-dockerhub.sh
+  - docker build -t $BASE_IMAGE_ID os/centos/base
+  - docker build -t $GO_IMAGE_ID os/centos/go
+  - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
+  - docker push $BASE_IMAGE_ID
+  - docker push $GO_IMAGE_ID
 branches:
   only:
     - develop
