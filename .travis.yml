@@ -6,7 +6,7 @@ env:
 language: generic
 before_install:
   - docker build -t $BASE_IMAGE_TAG os/centos/base
-  - docker login -e="$DOCKER_USERNAME" -e="$DOCKER_PASSWORD"
+  - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
   - docker push $BASE_IMAGE_TAG
 branches:
   only:
