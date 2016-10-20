@@ -6,7 +6,7 @@ env:
   - BASE_IMAGE_ID=$DOCKER_HUB_REPO:base-centos-$TRAVIS_BRANCH
   - GO_IMAGE_ID=$DOCKER_HUB_REPO:go-centos-$TRAVIS_BRANCH
 script:
-  - .travis-script.sh
+  - ci/travis.sh
 branches:
   only:
     - develop
