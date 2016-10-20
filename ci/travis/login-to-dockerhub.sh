@@ -1,1 +1,1 @@
-docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWOERD"
+docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
