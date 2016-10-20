@@ -3,7 +3,9 @@ language: c
 services:
   - docker
 env:
-  - BASE_IMAGE_ID=$DOCKER_HUB_REPO:base-centos-$TRAVIS_BRANCH GO_IMAGE_ID=$DOCKER_HUB_REPO:go-centos-$TRAVIS_BRANCH
+  global:
+    - BASE_IMAGE_ID=$DOCKER_HUB_REPO:base-centos-$TRAVIS_BRANCH 
+    - GO_IMAGE_ID=$DOCKER_HUB_REPO:go-centos-$TRAVIS_BRANCH
 script:
   - ci/travis.sh
 branches:
