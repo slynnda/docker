@@ -5,9 +5,9 @@ services:
 env:
   - BASE_IMAGE_TAG=$DOCKER_HUB_REPO:base-centos
 script:
-  - docker build -t $BASE_IMAGE_TAG os/centos/base
-  - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
-  - if [[ $TRAVIS-BRANCH != 'production' ]] docker push $BASE_IMAGE_TAG:$TRAVIS_BRANCH else docker push $BASE_IMAGE_TAG fi
+  - ci/travis/build-docker-images.sh
+  - ci/travis/login-to-dockerhub.sh
+  - ci/travis/deploy-to-dockerhub.sh
 branches:
   only:
     - develop
