@@ -4,6 +4,7 @@ services:
   - docker
 env:
   - BASE_IMAGE_TAG=$DOCKER_HUB_REPO:base-centos
+  - GO_IMAGE_TAG=$DOCKER_HUB_REPO:go-centos
 script:
   - ci/travis/build-docker-images.sh
   - ci/travis/login-to-dockerhub.sh
