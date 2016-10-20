@@ -5,7 +5,7 @@ env:
   - BASE_IMAGE_TAG=$DOCKER_HUB_REPO:base-centos-latest
 language: generic
 before_install:
-  - docker build -t $BASE_IMAGE_TAG os/centos/base/Dockerfile
+  - docker build -t $BASE_IMAGE_TAG os/centos/base
   - docker login -e="$DOCKER_USERNAME" -e="$DOCKER_PASSWORD"
   - docker push $BASE_IMAGE_TAG
 branches:
