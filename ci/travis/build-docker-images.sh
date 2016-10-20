@@ -1,1 +1,1 @@
-docker build -t $BASE_IMAGE_NAME os/centos/base
+docker build -t $BASE_IMAGE_TAG os/centos/base
