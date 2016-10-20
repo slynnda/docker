@@ -4,14 +4,10 @@ services:
   - docker
 env:
   - BASE_IMAGE_TAG=$DOCKER_HUB_REPO:base-centos-latest
-  - GO_IMAGE_TAG=$DOCKER_HUB_REPO:go-centos-latest
 before_install:
-  - echo "GO IMAGE TAG: $GO_IMAGE_TAG"
   - docker build -t $BASE_IMAGE_TAG os/centos/base
-  - docker build -t $GO_IMAGE_TAG os/centos/go
   - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
   - docker push $BASE_IMAGE_TAG
-  - docker push $GO_IMAGE_TAG
 branches:
   only:
     - develop
