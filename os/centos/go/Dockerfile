@@ -5,7 +5,7 @@ ENV HOME /root
 
 RUN mkdir -p /usr/lib/technicallyspeaking/build/go/dist && \
     wget -O /usr/local/$GO_DIST.tar.gz https://storage.googleapis.com/golang/$GO_DIST.tar.gz && \
-    tar -xvzf /usr/local/$GO_DIST.tar.gz && \
+    tar -xzf /usr/local/$GO_DIST.tar.gz && \
     rm /usr/local/$GO_DIST.tar.gz && \
     mkdir -p ~/workspace/bin && \
     mkdir -p ~/workspace/src && \
