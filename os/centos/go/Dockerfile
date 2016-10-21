@@ -1,4 +1,4 @@
-FROM technicallyspeaking/dev-envs:base-centos-latest
+FROM technicallyspeaking/dev-envs:base-centos-master
 
 ENV GO_DIST=go1.7.1.linux-amd64
 ENV HOME /root
