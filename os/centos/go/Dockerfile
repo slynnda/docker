@@ -12,4 +12,4 @@ RUN mkdir -p /usr/lib/technicallyspeaking/build/go/dist && \
     mkdir -p ~/workspace/pkg
 ENV PATH $PATH:/usr/local/go/bin
 ENV GOBIN $HOME/workspace/bin
-ENV GOPATH $HOME/workspace/src
+ENV GOPATH $HOME/workspace
