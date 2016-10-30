@@ -1,5 +1,5 @@
-# dev.env.ops.technicallyspeaking.io
+# docker
 
-[![Build Status](https://travis-ci.org/technicallyspeaking/dev.env.ops.technicallyspeaking.io.svg?branch=master)](https://travis-ci.org/technicallyspeaking/dev.env.ops.technicallyspeaking.io)
+[![Build Status](https://travis-ci.org/technicallyspeaking/docker.svg?branch=master)](https://travis-ci.org/technicallyspeaking/docker)
 
-Development environment for Technically Speaking containerized with Docker
+Docker image and container source code.
