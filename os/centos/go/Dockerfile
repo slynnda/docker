@@ -1,4 +1,6 @@
 FROM technicallyspeaking/dev-envs:base-centos-master
+MAINTAINER "Sophia Hudson" <sophia.hudson@technicallyspeaking.io>
+LABEL version = "0.1.0"
 
 ENV GO_DIST=go1.7.1.linux-amd64
 ENV HOME /root
