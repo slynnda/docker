@@ -15,7 +15,7 @@ RUN yum group install -y "Development Tools" && \
                    dig \
                    p7zip \
 		   git && \
-    mkdir -p ~/.vim/bundle && \
+    mkdir -p /root/.vim/bundle && \
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle && \
     git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/vim-colorschemes && \
     git clone https://github.com/tpope/vim-sensible.git ~/.vim/bundle/vim-sensible && \
@@ -31,9 +31,9 @@ RUN yum group install -y "Development Tools" && \
     git clone https://github.com/plasticboy/vim-markdown.git ~/.vim/bundle/vim-markdown && \
     git clone https://github.com/ekalinin/Dockerfile.vim.git ~/.vim/bundle/dockerfile
 
-COPY src/vim/.vimrc ~/.vimrc
-COPY src/bash/.bashrc ~/.bashrc
-COPY src/bash/.bash_profile ~/.bash_profile
+COPY src/vim/.vimrc /root/.vimrc
+COPY src/bash/.bashrc /root/.bashrc
+COPY src/bash/.bash_profile /root/.bash_profile
 
 WORKDIR root
 
