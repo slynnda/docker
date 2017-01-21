@@ -1,4 +1,3 @@
-# Core Information:
 FROM centos:latest
 MAINTAINER "Sophia Hudson" <sophia.hudson@technicallyspeaking.io>
 LABEL version="0.1.0"
@@ -35,8 +34,4 @@ COPY src/vim/.vimrc /root/.vimrc
 COPY src/bash/.bashrc /root/.bashrc
 COPY src/bash/.bash_profile /root/.bash_profile
 
-WORKDIR root
-
-# Expose port for ssh connections:
-EXPOSE 22
-
+WORKDIR /root
