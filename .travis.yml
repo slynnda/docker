@@ -4,9 +4,11 @@ services:
   - docker
 env:
   global:
-    - BASE_IMAGE_ID=$DOCKER_HUB_REPO:base-centos-$TRAVIS_BRANCH 
-    - GO_IMAGE_ID=$DOCKER_HUB_REPO:go-centos-$TRAVIS_BRANCH
-    - NODEJS_IMAGE_ID=$DOCKER_HUB_REPO:nodejs-centos-$TRAVIS_BRANCH
+    - OS=centos
+    - OS_VERSION=7.3.1611
+    - BASE_IMAGE_ID=$DOCKER_HUB_REPO:base-$OS-$OS_VERSION-$TRAVIS_BRANCH 
+    - GO_IMAGE_ID=$DOCKER_HUB_REPO:go-$OS-$OS_VERSION-$TRAVIS_BRANCH
+    - NODEJS_IMAGE_ID=$DOCKER_HUB_REPO:nodejs-$OS-$OS_VERSION-$TRAVIS_BRANCH
 install:
   - mkdir -p src/go/dist && curl -LO https://storage.googleapis.com/golang/go1.7.1.linux-amd64.tar.gz > src/go/dist/go1.7.1.linux-amd64.tar.gz 
 script:
