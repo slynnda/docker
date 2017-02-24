@@ -1,20 +1,20 @@
-# Core Information:
-FROM centos:latest
+FROM centos:7.3.1611
 MAINTAINER "Sophia Hudson" <sophia.hudson@technicallyspeaking.io>
 LABEL version="0.1.0"
 
 RUN yum group install -y "Development Tools" && \
     yum -y install epel-release \
-		   supervisor \
-                   libevent-devel \
-                   ncurses-devel \
-                   glib-c-static \
-                   vim \
-                   wget \
-                   telnet \
-                   dig \
-                   p7zip \
+		   python-setuptools \
+           libevent-devel \
+           ncurses-devel \
+           glib-c-static \
+           vim \
+           wget \
+           telnet \
+           dig \
+           p7zip \
 		   git && \
+    easy_install supervisor && \
     mkdir -p /root/.vim/bundle && \
     git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/vundle && \
     git clone https://github.com/flazz/vim-colorschemes.git /root/.vim/bundle/vim-colorschemes && \
@@ -35,8 +35,4 @@ COPY src/vim/.vimrc /root/.vimrc
 COPY src/bash/.bashrc /root/.bashrc
 COPY src/bash/.bash_profile /root/.bash_profile
 
-WORKDIR root
-
-# Expose port for ssh connections:
-EXPOSE 22
-
+WORKDIR /root

@@ -1,3 +1,6 @@
 #!/bin/bash
 source .buildvars
-docker build -t $DOCKER_REPOSITORY:$DOCKER_IMAGE_TAG .
+echo $GIT_BRANCH
+docker build \
+  --build-arg $GIT_BRANCH \
+  -t $DOCKER_REPOSITORY:$DOCKER_IMAGE_TAG .
