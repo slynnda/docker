@@ -1,5 +1,6 @@
 DOCKER_REPOSITORY=technicallyspeaking/dev-envs
-DOCKER_IMAGE_TAG=base-centos-latest
-DOCKER_CONTAINER_NAME=dev-base-centos
+GIT_BRANCH=$( git branch | grep \* | cut -d ' ' -f2 )
+DOCKER_IMAGE_TAG=base-centos-$GIT_BRANCH
+DOCKER_CONTAINER_NAME=dev-base-centos-$GIT_BRANCH
 GCLOUD_HOSTING_DOMAIN=us.gcr.io
 GCLOUD_PROJECT_NAME=technicallyspeaking-io
