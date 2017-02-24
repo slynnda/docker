@@ -1,5 +1,8 @@
+OS=centos
+OS_VERSION=7.3.1611
 DOCKER_REPOSITORY=technicallyspeaking/dev-envs
-DOCKER_IMAGE_TAG=nodejs-centos-latest
-DOCKER_CONTAINER_NAME=dev-nodejs-centos
+GIT_BRANCH=$( git branch | grep \* | cut -d ' ' -f2 )
+DOCKER_IMAGE_TAG=nodejs-$OS-$OS_VERSION-$GIT_VERSION
+DOCKER_CONTAINER_NAME=dev-nodejs-$OS-$OS_VERSION-$GIT_BRANCH
 GCLOUD_HOSTING_DOMAIN=us.gcr.io
 GCLOUD_PROJECT_NAME=technicallyspeaking-io
